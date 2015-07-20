@@ -132,7 +132,7 @@
             "media": {
               "type": "webpage",
               "webpage": {
-                "url": "http://localhost:8080/map21_progress/index.html",
+                "url": "http://localhost:8081/map21_progress/index.html",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true
@@ -147,7 +147,7 @@
             "media": {
               "type": "webpage",
               "webpage": {
-                "url": "http://localhost:8080/MAP21_Performance/src/index.html",
+                "url": "http://localhost:8080/src/index.html",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true
