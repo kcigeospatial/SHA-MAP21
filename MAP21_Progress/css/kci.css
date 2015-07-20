@@ -1,0 +1,233 @@
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	background-color: #FFFFFF;
+	font-family: 'Montserrat', sans-serif;
+	flex-flow: column;
+}
+
+.head {
+	background-color: #40BCF1;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	font-size: 200%;
+	text-align: center;
+	flex: none;
+}
+
+.mapContainer {
+	background-color: #000000;
+	overflow: hidden;
+	width: 100%;
+	flex: 5 5 252px;
+}
+
+.mapInner {
+	width: 100%;
+}
+
+.mapInner img {
+	width: 100%;
+}
+
+
+.headSubtitle {
+	color: #12273E;
+	font-size: 56%;
+}
+
+.messageContainer {
+	padding: 20px 0 0 0;
+	background-color: #FFFFFF;
+	flex: none;
+	height: 100px;
+}
+
+.messageContainer div img {
+	width: 60%;
+}
+
+.previous {
+	float: left;
+	width: 20%;
+	height: 1px;
+	text-align: center;
+}
+
+.message {
+	float: left;
+	width: 60%;
+	height: 1px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.next {
+	float: left;
+	width: 20%;
+	height: 1px;
+	text-align: center;
+}
+
+.poiHolder {
+	height: 100%;
+	width: 100%;
+}
+
+.poiMarkerContainer {
+	display: none;
+	position: relative;
+	height: 0;
+	width: 0;
+}
+
+.poiMarker {
+	position: relative;
+	z-index: 1;
+	font-size: 150%;
+	border: 6px solid #FFFFFF;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	color: #FFFFFF;
+	padding: 10px 0 0 0;
+	margin: 0 0 0 -30px;
+	height: 60px;
+	width: 60px;
+	background-color: #76C34D;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.poiData {
+	display: none;
+	position: relative;
+	z-index: 2;
+	background-color: #FFFFFF;
+	color: #333333;
+	width: 300px;
+	padding: 20px;
+	margin: -30px 0 0 0;
+}
+
+.z3 {
+	z-index: 3;
+}
+
+@media only screen and (min-width : 736px) and (max-width : 1023px) {
+	body {
+		background-color: #12273E;
+	}
+	
+	.head {
+		position: fixed;
+		z-index: 7;
+		top: 0;
+		left: 50px;
+		padding: 35px 30px 30px 30px;
+		text-align: left;
+	}
+	
+	.previous, .next {
+		display: none;
+	}
+	
+	.mapContainer {
+		position: absolute;
+		top: 150px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: auto;
+		width: auto;
+		background-color: #12273E;
+	}
+	
+	.messageContainer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 150px;
+		width: auto;
+		color: #FFFFFF;
+		background-color: #12273E;
+		padding: 0;
+		z-index: 6;
+	}
+	
+	.message {
+		float: none;
+		height: auto;
+		padding: 35px 30px 0 360px;
+		height: auto;
+		width: auto;
+	}
+	
+	.flowBlock {
+		display: inline-block;
+	}
+	
+	.poiMarkerContainer {
+		display: block;
+	}
+}
+
+@media only screen and (min-width : 1024px) {
+	body {
+		background-color: #12273E;
+	}
+	
+	.head {
+		position: fixed;
+		z-index: 7;
+		top: 64px;
+		padding: 24px 30px 30px 30px;
+		text-align: left;
+	}
+	
+	.previous, .next {
+		display: none;
+	}
+	
+	.mapContainer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 176px;
+		height: auto;
+		width: auto;
+		background-color: #12273E;
+	}
+	
+	.messageContainer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: auto;
+		width: 176px;
+		color: #FFFFFF;
+		background-color: #12273E;
+		padding-top: 205px;
+		z-index: 6;
+	}
+	
+	.message {
+		float: none;
+		height: auto;
+		width: 176px;
+		padding: 0 28px;
+	}
+	
+	.poiMarkerContainer {
+		display: block;
+	}
+}

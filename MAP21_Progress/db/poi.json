@@ -1,0 +1,48 @@
+{
+	"pois": [{
+            "id": "0",
+            "typeId": "1",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>Pellentesque mollis, leo sed maximus egestas,<br/>arcu eros auctor magna, vitae blandit felis nunc quis justo.",
+            "x": 0.0,
+            "y": 0.0,
+            "scale": 1.0,
+            "ix": 0.0,
+            "iy": 0.0
+        }, {
+            "id": "1",
+            "typeId": "2",
+            "text": "SHA has sucessfully upgraded XX% of roadway lighting to LED, which provides brighter road conditions and they last XX times longer than the traditional XX light.",
+            "x": 0.1,
+            "y": 0.0,
+            "scale": 4.0,
+            "ix": 0.66,
+            "iy": 0.1
+        }, {
+            "id": "2",
+            "typeId": "2",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "x": 0.5,
+            "y": 0.0,
+            "scale": 4.0,
+            "ix": 0.6,
+            "iy": 0.6
+        }, {
+            "id": "3",
+            "typeId": "2",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"x": 0.39,
+            "y": 0.38,
+            "scale": 5.0,
+            "ix": 0.2,
+            "iy": 0.5
+        }, {
+            "id": "4",
+            "typeId": "2",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"x": 0.39,
+            "y": 0.38,
+            "scale": 5.0,
+            "ix": 0.2,
+            "iy": 0.2
+        }]
+}

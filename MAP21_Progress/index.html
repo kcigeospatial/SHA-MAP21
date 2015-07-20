@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+		<title>Big Tobacco</title>
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700,700italic,100,300' rel='stylesheet' type='text/css'>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link href="css/kci.css" rel="stylesheet">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	</head>
+	<body>
+		<div class="head">
+			<div>Moving Ahead</div><div> for Progress</div>
+			<div class="headSubtitle">in the 21st Century</div>
+		</div>
+		<div class="mapContainer">
+			<div class="mapInner">
+				<img class="mapImg" src="images/traffic.jpg" alt="" />
+			</div>
+		</div>
+		<div class="messageContainer">
+			<div class="previous">
+				<img src="images/leftArrow.png" alt="" />
+			</div>
+			<div class="message">
+				<div class="messageText">
+					<!--div class="flowBlock">Or billboards. </div>
+					<div class="flowBlock">Or newspapers. </div>
+					<div class="flowBlock">Or magazines. </div-->
+					<br/>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Pellentesque mollis, leo sed maximus egestas,
+					arcu eros auctor magna, vitae blandit felis nunc quis justo.
+				</div>
+				</div>
+			<div class="next">
+				<img src="images/rightArrow.png" alt="" />
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			if($('body').width() < 736) {
+				//Mobile View
+				var onPoi = 0;
+				var poiCount = (-1);
+				var poi = [];
+				$(function() {
+					$('.messageText').html('');
+					$('.mapInner').width($('.mapContainer').width());
+					
+					$.getJSON('db/poi.json', function(data) {
+			            $.each(data.pois, function(key, val) {
+			                poi.push($.makeArray(val)[0]);
+			                poiCount++;
+			            });
+			            
+			            updatePOI();
+					});
+					
+					$('.next').click(function() {
+						onPoi++;
+						if(onPoi > poiCount) { onPoi = 0; }
+						updatePOI();
+					});
+					
+					$('.previous').click(function() {
+						onPoi--;
+						updatePOI();
+					});
+					
+					$(window).resize(function() {
+						if($('body').width() > 735) { window.location = window.location; }
+					});
+				});
+				
+				function updatePOI() {
+					if(onPoi == 0) { $('.previous').find('img').css('display', 'none'); } else { $('.previous').find('img').css('display', 'inline-block'); }
+					
+					$('.messageText').fadeOut(function() {
+						$('.messageText').html(poi[onPoi].text);
+						
+						var scaleWidth = $('.mapContainer').width()*poi[onPoi].scale;
+						var scaleHeight = $('.mapContainer').height()*poi[onPoi].scale;
+						var mLeft = scaleWidth*poi[onPoi].x*(-1);
+						var mTop = scaleHeight*poi[onPoi].y*(-1);
+						
+						$('.mapInner').animate({
+							marginLeft: mLeft+'px',
+							marginTop: mTop+'px',
+							width: scaleWidth+'px'
+						}, 1000, function() {
+							$('.messageText').fadeIn();
+						});
+					});
+				}
+			} else {
+				//Desktop-Tablet View
+				var onPoi = 0;
+				
+				$(function() {
+					screenResize();
+					
+					$.getJSON('db/poi.json', function(data) {
+			            $.each(data.pois, function(key, val) {
+			                var poiData = $.makeArray(val)[0];
+			                if(poiData.typeId == 2) {
+				                
+				                var dataStyles = '';
+				                if(poiData.ix > 0.5) {
+					                 dataStyles = 'style="margin-left: -300px;"';
+				                }
+				                
+			                	$('.mapInner').prepend('<div id="'+poiData.id+'" class="poiMarkerContainer" style="top: '+(poiData.iy*100)+'%; left: '+(poiData.ix*100)+'%;"><div class="poiMarker">'+poiData.id+'</div><div class="poiData"'+dataStyles+'>'+poiData.text+'</div></div>');
+			                }
+			            });
+			            
+			            $('.mapImg').click(function() {
+				            $('.poiData').fadeOut();
+				            onPoi = 0;
+			            });
+			            
+			            $('.poiMarkerContainer').click(function() {
+				            poiId = $(this).attr('id');
+				            if(poiId == onPoi) {
+					            setTimeout(function() { $('#'+oldPoi).find('.poiMarker').removeClass('z3'); }, 1000);
+					            $('.poiData').fadeOut();
+					            onPoi = 0;
+				            } else {
+						        var oldPoi = onPoi;
+						        setTimeout(function() { $('#'+oldPoi).find('.poiMarker').removeClass('z3'); }, 1000);
+						        $('.poiData').fadeOut();
+					            $(this).find('.poiMarker').addClass('z3');
+					            $(this).find('.poiData').fadeIn();
+					            onPoi = poiId;
+				            }
+			            });
+					});
+					
+					$(window).resize(function() {
+						screenResize();
+						if($('body').width() < 736) { window.location = window.location; }
+					});
+				});
+				
+				function screenResize() {
+					$('.mapContainer').height($('.mapInner').width()*0.75);
+					$('.mapInner').height($('.mapInner').width()*0.75);
+				}
+			}
+		</script>
+	</body>
+</html>
