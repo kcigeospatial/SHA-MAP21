@@ -1,0 +1,183 @@
+{
+  "item": {
+    "id": "65818faf85d74acfa0a8f2067ff87d46",
+    "item": "65818faf85d74acfa0a8f2067ff87d46",
+    "itemType": "text",
+    "owner": "KCI_Geosolutions",
+    "orgId": "51VTafzU9uSHetfn",
+    "uploaded": 1436384113000,
+    "modified": 1436559844000,
+    "guid": null,
+    "name": null,
+    "title": "MAP21 Test",
+    "type": "Web Mapping Application",
+    "typeKeywords": [
+      "JavaScript",
+      "layout-tab",
+      "Map",
+      "Mapping Site",
+      "MapSeries",
+      "Online Map",
+      "Ready To Use",
+      "selfConfigured",
+      "Story Map",
+      "Story Maps",
+      "Web Map"
+    ],
+    "description": null,
+    "tags": [
+      "Story Map",
+      "Map Series"
+    ],
+    "snippet": null,
+    "thumbnail": null,
+    "documentation": null,
+    "extent": [],
+    "lastModified": -1,
+    "spatialReference": null,
+    "accessInformation": null,
+    "licenseInfo": null,
+    "culture": "en-us",
+    "properties": null,
+    "url": "http://kcigeosolutions.maps.arcgis.com/apps/MapSeries/?appid=65818faf85d74acfa0a8f2067ff87d46",
+    "access": "public",
+    "size": 1100,
+    "appCategories": [],
+    "industries": [],
+    "languages": [],
+    "largeThumbnail": null,
+    "banner": null,
+    "screenshots": [],
+    "listed": false,
+    "commentsEnabled": true,
+    "numComments": 0,
+    "numRatings": 0,
+    "avgRating": 0,
+    "numViews": 46
+  },
+  "itemData": {
+    "values": {
+      "settings": {
+        "layout": {
+          "id": "tab"
+        },
+        "layoutOptions": {
+          "description": true,
+          "legend": "panel",
+          "panel": {
+            "position": "left",
+            "size": "medium"
+          },
+          "panelMapOverlap": false
+        },
+        "mapOptions": {
+          "overview": {
+            "enable": false,
+            "openByDefault": true
+          },
+          "locateBtn": {
+            "enable": false
+          },
+          "geocoder": {
+            "enable": false
+          },
+          "mapsSync": true
+        },
+        "theme": {
+          "colors": {
+            "name": "tab-default-1",
+            "group": "default",
+            "themeMajor": "white",
+            "header": "#283239",
+            "headerTitle": "#FFFFFF",
+            "headerText": "#D9D9D9",
+            "panel": "#DBD9DA",
+            "text": "#000000",
+            "textLink": "#555555",
+            "media": "#FFFFFF",
+            "mapControls": "#DBD9DA",
+            "softText": "#444444",
+            "softBtn": "#444444",
+            "esriLogo": "white",
+            "esriLogoMobile": "black",
+            "tab": "#60788A",
+            "tabActive": "#69B9D2",
+            "tabHover": "#4B879D",
+            "tabText": "#FFFFFF",
+            "tabTextHover": "#FFFFFF",
+            "tabTextActive": "#FFFFFF"
+          }
+        },
+        "header": {
+          "linkText": "",
+          "linkURL": "http://storymaps.arcgis.com",
+          "logoURL": "NO_LOGO",
+          "logoTarget": "",
+          "social": {
+            "facebook": false,
+            "twitter": false,
+            "bitly": false
+          },
+          "compactSize": true
+        }
+      },
+      "title": "",
+      "story": {
+        "storage": "WEBAPP",
+        "entries": [
+          {
+            "title": "Overview",
+            "creaDate": 1436446739071,
+            "status": "PUBLISHED",
+            "media": {
+              "type": "webpage",
+              "webpage": {
+                "url": "http://localhost:8080/map21_progress/index.html",
+                "type": "webpage",
+                "display": "stretch",
+                "unload": true
+              }
+            },
+            "description": ""
+          },
+          {
+            "title": "Performance",
+            "creaDate": 1436559826703,
+            "status": "PUBLISHED",
+            "media": {
+              "type": "webpage",
+              "webpage": {
+                "url": "http://localhost:8080/MAP21_Performance/src/index.html",
+                "type": "webpage",
+                "display": "stretch",
+                "unload": true
+              }
+            },
+            "description": ""
+          },
+          {
+            "title": "Strategies",
+            "creaDate": 1436454142586,
+            "status": "PUBLISHED",
+            "media": {
+              "type": "webpage",
+              "webpage": {
+                "url": "http://kcigeosolutions.maps.arcgis.com/apps/MapJournal/?appid=eb988adede6445d8bc84d4d07fb8d2ce",
+                "type": "webpage",
+                "display": "stretch",
+                "unload": true
+              }
+            },
+            "description": ""
+          }
+        ]
+      },
+      "template": {
+        "name": "Map Series",
+        "createdWith": "1.1.0",
+        "editedWith": "1.2.0-070215"
+      },
+      "subtitle": ""
+    }
+  }
+}
