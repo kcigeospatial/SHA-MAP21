@@ -162,7 +162,7 @@
             "media": {
               "type": "webpage",
               "webpage": {
-                "url": "http://kcigeosolutions.maps.arcgis.com/apps/MapJournal/?appid=eb988adede6445d8bc84d4d07fb8d2ce",
+                "url": "http://localhost:8082/src/index.html",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true
