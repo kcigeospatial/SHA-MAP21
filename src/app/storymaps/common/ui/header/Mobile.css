@@ -8,6 +8,19 @@
 	z-index: 100;
 }
 
+#headerMobile .titleArea {
+	display: -webkit-flex; /* Safari */
+	display: flex;
+}
+
+#headerMobile .titleArea span {
+	flex: none;
+}
+
+.logoImgMobile {
+	flex: none;
+}
+
 #headerMobile .banner {
 	display: none;
 	cursor: pointer;
@@ -25,6 +38,7 @@
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	max-height: 55px;
+	flex: 1;
 }
 
 #headerMobile .subtitle {

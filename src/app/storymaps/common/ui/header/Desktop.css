@@ -9,7 +9,7 @@
 }
 
 #header .title {
-	font-family: 'open_sanssemibold', sans-serif;
+	font-family: 'ptsans', sans-serif;
 }
 
 /*
@@ -18,7 +18,14 @@
 
 #headerDesktop {
 	position: relative;
-	height: 115px;
+	height: 75px;
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	background-color: #12273E !important;
+}
+
+.mainViewAboveMap{
+	background-color: #12273E !important;
 }
 
 #headerDesktop.compact {
@@ -39,7 +46,7 @@
 
 #headerDesktop .title {
 	height: 45px;
-	padding-top: 3px;
+	padding-top: 3px !important;
 	font-size: 24px;
 	font-weight: normal;
 	text-align: left;
@@ -87,13 +94,9 @@
 	padding-left: 4px;
 }
 
-#headerDesktop .rightArea {
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	padding-top: 22px;
-	padding-right: 20px;
+#headerDesktop .leftArea {
 	text-align: right;
+	flex: none;
 }
 
 #headerDesktop.compact .linkSocialContainer {
@@ -210,11 +213,35 @@
 }
 
 #headerDesktop .textArea {
-	padding-top: 10px;
+	-webkit-flex: 1;  /* Safari 6.1+ */
+	-ms-flex: 1;  /* IE 10 */
+	flex: 1;
 	padding-left: 16px;
-	width: 70%;
+	padding-top: 20px;
 }
 
 #headerDesktop .title.error {
 	color: red;
+}
+
+/*Mobile*/
+#headerMobile .titleArea {
+	display: -webkit-flex; /* Safari */
+	display: flex;
+}
+
+#headerMobile .titleArea span {
+	flex: none;
+}
+
+.logoImgMobile {
+	flex: none;
+	height: 32px;
+	padding-left: 40px;
+}
+
+#headerMobile .title {
+	-webkit-flex: 1;  /* Safari 6.1+ */
+	-ms-flex: 1;  /* IE 10 */
+	flex: 1;
 }
