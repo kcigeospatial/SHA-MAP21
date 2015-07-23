@@ -229,23 +229,11 @@
 
 }
 
-
-@media only screen and (max-width: 400px) {
-
-	.logoImgMobile{
-		display: none;
-	}
-
-	#headerMobile .title {
-		text-align: center;
-	}
-
-}
-
 .logoImgMobile {
 	height: 32px;
 	padding-left: 40px;
 }
 
 #headerMobile .title {
+	text-align: center;
 }

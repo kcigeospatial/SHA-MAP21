@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-		<title>Big Tobacco</title>
+		<title>MAP21</title>
 		<!-- Google Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700,700italic,100,300' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
@@ -31,8 +31,8 @@
 			</div>
 		</div>
 		<div class="messageContainer">
-			<div class="previous">
-				<img src="images/leftArrow.png" alt="" />
+			<div class="btn-container left">
+				<div class="embed-btn"></div>
 			</div>
 			<div class="message">
 				<div class="messageText">
@@ -45,8 +45,8 @@
 					arcu eros auctor magna, vitae blandit felis nunc quis justo.
 				</div>
 				</div>
-			<div class="next">
-				<img src="images/rightArrow.png" alt="" />
+			<div class="btn-container right">
+				<div class="embed-btn"></div>
 			</div>
 		</div>
 		
@@ -58,7 +58,7 @@
 				var poi = [];
 				$(function() {
 					$('.messageText').html('');
-					$('.mapInner').width($('.mapContainer').width());
+//					$('.mapInner').width($('.mapContainer').width());
 					
 					$.getJSON('db/poi.json', function(data) {
 			            $.each(data.pois, function(key, val) {
@@ -69,13 +69,19 @@
 			            updatePOI();
 					});
 					
-					$('.next').click(function() {
+					$('.right').click(function() {
+						if($(this).hasClass('disabled')){
+							return;
+						}
 						onPoi++;
 						if(onPoi > poiCount) { onPoi = 0; }
 						updatePOI();
 					});
 					
-					$('.previous').click(function() {
+					$('.left').click(function() {
+						if($(this).hasClass('disabled')){
+							return;
+						}
 						onPoi--;
 						updatePOI();
 					});
@@ -86,7 +92,7 @@
 				});
 				
 				function updatePOI() {
-					if(onPoi == 0) { $('.previous').find('img').css('display', 'none'); } else { $('.previous').find('img').css('display', 'inline-block'); }
+					if(onPoi == 0) { $('.left').addClass('disabled'); } else { $('.left').removeClass('disabled'); }
 					
 					$('.messageText').fadeOut(function() {
 						$('.messageText').html(poi[onPoi].text);
