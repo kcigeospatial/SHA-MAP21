@@ -198,6 +198,11 @@ body {
 }
 
 @media only screen and (min-width : 736px) and (max-width : 1023px) {
+
+    .bottom-fade{
+        display: none;
+    }
+
 	body {
 		background-color: #12273E;
 	}
@@ -265,6 +270,10 @@ body {
 	body {
 		background-color: #12273E;
 	}
+
+    .bottom-fade{
+        display: none;
+    }
 	
 	.head {
 		position: fixed;
