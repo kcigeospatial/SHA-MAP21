@@ -4,15 +4,31 @@ html, body {
 	margin: 0;
 }
 
+.color-primary-1 {
+	background-color: #0E355B !important;
+}
+.color-primary-2 {
+	background-color: #18588C !important;
+}
+.color-primary-3 {
+	background-color: #1F72A5 !important;
+}
+.color-secondary-4 {
+	background-color: #F1A86C !important;
+}
+.color-secondary-5 {
+	background-color: #F18A4F !important;
+}
+
 body {
 	display: flex;
 	background-color: #FFFFFF;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	flex-flow: column;
 }
 
 .head {
-	background-color: #40BCF1;
+	background-color: #0E355B;
 	color: #FFFFFF;
 	text-transform: uppercase;
 	padding: 10px 25px;
@@ -38,7 +54,7 @@ body {
 
 
 .headSubtitle {
-	color: #12273E;
+	color: rgb(219, 217, 218);
 	font-size: 56%;
 }
 
@@ -167,16 +183,16 @@ body {
 	position: relative;
 	z-index: 1;
 	font-size: 150%;
-	border: 6px solid #FFFFFF;
+	border: 3px solid #FFFFFF;
 	-webkit-border-radius: 35px;
 	-moz-border-radius: 35px;
 	border-radius: 35px;
 	color: #FFFFFF;
-	padding: 10px 0 0 0;
+	padding: 12px 0 0 0;
 	margin: 0 0 0 -30px;
 	height: 60px;
 	width: 60px;
-	background-color: #76C34D;
+	background-color: #F18A4F;
 	text-align: center;
 	vertical-align: middle;
 	cursor: pointer;
@@ -214,6 +230,8 @@ body {
 		left: 50px;
 		padding: 35px 30px 30px 30px;
 		text-align: left;
+		background-color: rgba(14, 53, 91, 0.3);
+		pointer-events: none;
 	}
 	
 	.previous, .next {
@@ -222,7 +240,7 @@ body {
 	
 	.mapContainer {
 		position: absolute;
-		top: 150px;
+		top: 0px;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -233,13 +251,14 @@ body {
 	
 	.messageContainer {
 		position: fixed;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		right: 0;
 		height: 150px;
 		width: auto;
 		color: #FFFFFF;
-		background-color: #12273E;
+		background-color: transparent;
+		pointer-events: none;
 		padding: 0;
 		z-index: 6;
 	}
@@ -248,8 +267,13 @@ body {
 		float: none;
 		height: auto;
 		padding: 35px 30px 0 360px;
+		background-color: transparent;
 		height: auto;
 		width: auto;
+	}
+
+	.messageText{
+		background-color: rgba(14, 53, 91, 0.3);
 	}
 	
 	.flowBlock {
@@ -281,10 +305,16 @@ body {
 		top: 64px;
 		padding: 24px 30px 30px 30px;
 		text-align: left;
+		background-color: rgba(14, 53, 91, 0.75);
+		pointer-events: none;
 	}
 	
 	.previous, .next {
 		display: none;
+	}
+
+	.message {
+		margin: 0;
 	}
 	
 	.mapContainer {
@@ -292,7 +322,7 @@ body {
 		top: 0;
 		right: 0;
 		bottom: 0;
-		left: 176px;
+		/*left: 225px;*/
 		height: auto;
 		width: auto;
 		background-color: #12273E;
@@ -304,18 +334,19 @@ body {
 		left: 0;
 		bottom: 0;
 		height: auto;
-		width: 176px;
+		width: 380px;
 		color: #FFFFFF;
-		background-color: #12273E;
-		padding-top: 205px;
+		background-color: transparent;
+		padding-top: 180px;
 		z-index: 6;
 	}
 	
 	.message {
 		float: none;
 		height: auto;
-		width: 176px;
-		padding: 0 28px;
+		width: 100%;
+		padding: 60px 80px;
+		background-color: rgba(14, 53, 91, 0.4);
 	}
 	
 	.poiMarkerContainer {

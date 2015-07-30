@@ -121,7 +121,7 @@
           "compactSize": true
         }
       },
-      "title": "SHA MAP-21 Story",
+      "title": "Meeting or Exceeding Federal Requirements",
       "story": {
         "storage": "WEBAPP",
         "entries": [
@@ -133,6 +133,21 @@
               "type": "webpage",
               "webpage": {
                 "url": "http://localhost:8081/map21_progress/index.html",
+                "type": "webpage",
+                "display": "stretch",
+                "unload": true
+              }
+            },
+            "description": ""
+          },
+          {
+            "title": "Overview 2",
+            "creaDate": 1436446739071,
+            "status": "PUBLISHED",
+            "media": {
+              "type": "webpage",
+              "webpage": {
+                "url": "http://localhost:8081/parallax/index.html",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true

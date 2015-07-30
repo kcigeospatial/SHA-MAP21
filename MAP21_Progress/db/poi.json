@@ -2,7 +2,7 @@
 	"pois": [{
             "id": "0",
             "typeId": "1",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>Pellentesque mollis, leo sed maximus egestas,<br/>arcu eros auctor magna, vitae blandit felis nunc quis justo.",
+            "text": "Moving Ahead for Progress in the 21st Century (MAP-21) is a milestone for the U.S. economy and the Nation's surface transportation program. By transforming the policy and programmatic framework for investments to guide the system's growth and development, MAP-21 creates a streamlined and performance-based surface transportation program and builds on many of the highway, transit, bike, and pedestrian programs and policies established in 1991.",
             "x": 0.0,
             "y": 0.0,
             "scale": 1.0,
@@ -11,16 +11,16 @@
         }, {
             "id": "1",
             "typeId": "2",
-            "text": "SHA has sucessfully upgraded XX% of roadway lighting to LED, which provides brighter road conditions and they last XX times longer than the traditional XX light.",
+            "text": "Safety - to achieve a significant reduction in traffic fatalities and serious injuries on all public roads.",
             "x": 0.66,
             "y": 0.1,
             "scale": 4.0,
-            "ix": 0.66,
+            "ix": 0.8,
             "iy": 0.1
         }, {
             "id": "2",
             "typeId": "2",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "text": "Infrastructure Condition - to maintain the highway infrastructure asset system in a state of good repair.",
             "x": 0.5,
             "y": 0.0,
             "scale": 4.0,
@@ -29,20 +29,22 @@
         }, {
             "id": "3",
             "typeId": "2",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "text": "Congestion Reduction - to achieve a significant reduction in congestion on the NHS.",
 			"x": 0.39,
             "y": 0.38,
             "scale": 5.0,
-            "ix": 0.2,
-            "iy": 0.5
-        }, {
-            "id": "4",
-            "typeId": "2",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			"x": 0.39,
-            "y": 0.38,
-            "scale": 5.0,
-            "ix": 0.2,
-            "iy": 0.2
-        }]
+            "ix": 0.4,
+            "iy": 0.6
+        }
+    , {
+        "id": "4",
+        "typeId": "2",
+        "text": "System Reliability - to improve the efficiency of the surface transportation system.",
+        "x": 0.39,
+        "y": 0.38,
+        "scale": 5.0,
+        "ix": 0.4,
+        "iy": 0.4
+      }
+    ]
 }

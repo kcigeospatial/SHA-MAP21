@@ -10,6 +10,7 @@
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Bootstrap -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link href="css/kci.css" rel="stylesheet">
 		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -22,7 +23,7 @@
 	</head>
 	<body>
 		<div class="head">
-			<div>Moving Ahead</div><div> for Progress</div>
+			<div>Moving Ahead For Progress</div>
 			<div class="headSubtitle">in the 21st Century</div>
 		</div>
 		<div class="mapContainer">
@@ -36,13 +37,7 @@
 			</div>
 			<div class="message">
 				<div class="messageText">
-					<!--div class="flowBlock">Or billboards. </div>
-					<div class="flowBlock">Or newspapers. </div>
-					<div class="flowBlock">Or magazines. </div-->
-					<br/>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Pellentesque mollis, leo sed maximus egestas,
-					arcu eros auctor magna, vitae blandit felis nunc quis justo.
+					Moving Ahead for Progress in the 21st Century (MAP-21) is a milestone for the U.S. economy and the Nation's surface transportation program. By transforming the policy and programmatic framework for investments to guide the system’s growth and development, MAP-21 creates a streamlined and performance-based surface transportation program and builds on many of the highway, transit, bike, and pedestrian programs and policies established in 1991.
 				</div>
 				</div>
 			<div class="btn-container right">
@@ -137,8 +132,20 @@
 				            $('.poiData').fadeOut();
 				            onPoi = 0;
 			            });
-			            
-			            $('.poiMarkerContainer').click(function() {
+
+						$('.poiMarkerContainer').hover(function() {
+//							debugger;
+							var marker = $(this).find('.poiMarker')[0];
+							$(marker).stop();
+							$(marker).animate({height: '66px', width: '66px', margin: '0 0 0 -33px', padding: '15px 0 0 0'}, 200);
+						}, function() {
+//							debugger;
+							var marker = $(this).find('.poiMarker')[0];
+							$(marker).stop();
+							$(marker).animate({height: '60px', width: '60px', margin: '0 0 0 -30px', padding: '12px 0 0 0'}, 200);
+						});
+
+						$('.poiMarkerContainer').click(function() {
 				            poiId = $(this).attr('id');
 				            if(poiId == onPoi) {
 					            setTimeout(function() { $('#'+oldPoi).find('.poiMarker').removeClass('z3'); }, 1000);

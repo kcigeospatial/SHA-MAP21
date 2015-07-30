@@ -1,3 +1,21 @@
+
+.color-primary-1 {
+	background-color: #0E355B !important;
+}
+.color-primary-2 {
+	background-color: #18588C !important;
+}
+.color-primary-3 {
+	background-color: #1F72A5 !important;
+}
+.color-secondary-4 {
+	background-color: #F1A86C !important;
+}
+.color-secondary-5 {
+	background-color: #F18A4F !important;
+}
+
+
 #header {
 	/*height: 115px;*/
 	/* TODO */
@@ -9,7 +27,7 @@
 }
 
 #header .title {
-	font-family: 'ptsans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 /*
@@ -21,12 +39,12 @@
 	height: 75px;
 	display: -webkit-flex; /* Safari */
 	display: flex;
-	background-color: #12273E !important;
+	/*background-color: #12273E !important;*/
 }
 
-.mainViewAboveMap{
-	background-color: #12273E !important;
-}
+/*.mainViewAboveMap{*/
+	/*background-color: #12273E !important;*/
+/*}*/
 
 #headerDesktop.compact {
 	height: 60px;
@@ -221,6 +239,10 @@
 }
 
 /*Mobile*/
+#headerMobile{
+	background-color: #1F72A5 !important;
+}
+
 #headerMobile .titleArea {
 
 }
@@ -236,4 +258,5 @@
 
 #headerMobile .title {
 	text-align: center;
+	font-size: 16px;
 }
