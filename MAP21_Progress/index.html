@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<div class="head">
-			<div>Moving Ahead For Progress</div>
+			<div class="headTitle">Moving Ahead For Progress</div>
 			<div class="headSubtitle">in the 21st Century</div>
 		</div>
 		<div class="mapContainer">
@@ -38,6 +38,9 @@
 			<div class="message">
 				<div class="messageText">
 					Moving Ahead for Progress in the 21st Century (MAP-21) is a milestone for the U.S. economy and the Nation's surface transportation program. By transforming the policy and programmatic framework for investments to guide the system’s growth and development, MAP-21 creates a streamlined and performance-based surface transportation program and builds on many of the highway, transit, bike, and pedestrian programs and policies established in 1991.
+					</br>
+					<span class="source-title">Source:</span>
+					<span class="source-text">https://www.fhwa.dot.gov/map21/</span>
 				</div>
 				</div>
 			<div class="btn-container right">
@@ -49,12 +52,20 @@
 		<script type="text/javascript">
 			if($('body').width() < 736) {
 				//Mobile View
+
+
+
 				var onPoi = 0;
 				var poiCount = (-1);
 				var poi = [];
+
+				$(window).resize(function() {
+					screenResize(poi[onPoi]);
+				});
+
 				$(function() {
 					$('.messageText').html('');
-//					$('.mapInner').width($('.mapContainer').width());
+					$('.mapInner').width($('.mapContainer').width());
 					
 					$.getJSON('db/poi.json', function(data) {
 			            $.each(data.pois, function(key, val) {
@@ -168,9 +179,18 @@
 					});
 				});
 				
-				function screenResize() {
-					$('.mapContainer').height($('.mapInner').width()*0.75);
+				function screenResize(poi) {
+
+
+
+					$('.mapContainer').height($('body').height() - $('.head').height() - $('.messageContainer').height());
 					$('.mapInner').height($('.mapInner').width()*0.75);
+
+					if($('body').width() < 736 && poi != null) {
+						var scaleWidth = $('.mapContainer').width()*poi.scale;
+						$('.mapInner').width(scaleWidth+'px');
+						$('.mapInner').css('left', scaleWidth*poi.x*(-1)+'px');
+					}
 				}
 			}
 		</script>

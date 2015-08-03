@@ -141,13 +141,13 @@
             "description": ""
           },
           {
-            "title": "Overview 2",
-            "creaDate": 1436446739071,
+            "title": "Performance",
+            "creaDate": 1436559826703,
             "status": "PUBLISHED",
             "media": {
               "type": "webpage",
               "webpage": {
-                "url": "http://localhost:8081/parallax/index.html",
+                "url": "http://localhost:8080/src/index.html",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true
@@ -156,13 +156,13 @@
             "description": ""
           },
           {
-            "title": "Performance",
+            "title": "Performance - No Map",
             "creaDate": 1436559826703,
             "status": "PUBLISHED",
             "media": {
               "type": "webpage",
               "webpage": {
-                "url": "http://localhost:8080/src/index.html",
+                "url": "http://localhost:8080/src/index.html?v=2",
                 "type": "webpage",
                 "display": "stretch",
                 "unload": true
