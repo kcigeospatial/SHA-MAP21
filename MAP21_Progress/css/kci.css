@@ -21,10 +21,10 @@ html, body {
 }
 
 body {
-	/*display: flex;*/
+	display: flex;
 	background-color: #FFFFFF;
 	font-family: 'Roboto', sans-serif;
-	/*flex-flow: column;*/
+	flex-flow: column;
 }
 
 .head {
@@ -34,7 +34,7 @@ body {
 	padding: 10px 25px;
 	font-size: 200%;
 	text-align: center;
-	/*flex: none;*/
+	flex: none;
 }
 
 .headTitle {
@@ -47,7 +47,7 @@ body {
 	overflow: hidden;
 	width: 100%;
 
-	/*flex: 5 5 1000px;*/
+	flex: 5 5 1000px;
 }
 
 .mapInner {
@@ -67,11 +67,12 @@ body {
 .messageContainer {
 	padding: 10px 0 0 0;
 	background-color: rgb(219, 217, 218);
-	/*flex: 1 0 100px;*/
+	flex: 1 0 100px;
 	height: 100px;
 	display: block!important;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	overflow-x:hidden;
+	-ms-overflow-style: none;
 	position: absolute;
 	bottom:0;
 	width: 100%;
@@ -100,7 +101,7 @@ body {
     background: -o-linear-gradient(top,  rgba(219,217,218,1) 0%,rgba(219,217,218,0) 25%,rgba(219,217,218,0) 50%,rgba(219,217,218,0) 75%,rgba(219,217,218,1) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  rgba(219,217,218,1) 0%,rgba(219,217,218,0) 25%,rgba(219,217,218,0) 50%,rgba(219,217,218,0) 75%,rgba(219,217,218,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(219,217,218,1) 0%,rgba(219,217,218,0) 25%,rgba(219,217,218,0) 50%,rgba(219,217,218,0) 75%,rgba(219,217,218,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbd9da', endColorstr='#dbd9da',GradientType=0 ); /* IE6-9 */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbd9da', endColorstr='#dbd9da',GradientType=0 ); /!* IE6-9 *!/*/
 
 }
 
@@ -109,13 +110,13 @@ body {
 }
 
 .btn-container{
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	display: block;
 	width: 51px;
 	height:100px;
 	z-index: 1;
-	padding-top:30px;
+	padding-top:27px;
 	opacity: 0.8;
 }
 
@@ -138,7 +139,7 @@ body {
 }
 
 .messageText {
-
+	padding-bottom: 10px;
 }
 
 
@@ -189,7 +190,7 @@ body {
 
 .poiMarkerContainer {
 	display: none;
-	position: relative;
+	position: absolute;
 	height: 0;
 	width: 0;
 }

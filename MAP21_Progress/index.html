@@ -50,6 +50,13 @@
 		</div>
 		
 		<script type="text/javascript">
+			var ua = window.navigator.userAgent;
+			var msie = ua.indexOf("MSIE ");
+
+			if (msie > 0) {
+				$('.bottom-fade').css('z-index', '0')
+			}
+
 			if($('body').width() < 736) {
 				//Mobile View
 
@@ -103,11 +110,27 @@
 					
 					$('.messageText').fadeOut(function() {
 						$('.messageText').html(poi[onPoi].text);
-						
+
+
+
+
 						var scaleWidth = $('.mapContainer').width()*poi[onPoi].scale;
 						var scaleHeight = $('.mapContainer').height()*poi[onPoi].scale;
 						var mLeft = scaleWidth*poi[onPoi].x*(-1);
 						var mTop = scaleHeight*poi[onPoi].y*(-1);
+
+						var ua = window.navigator.userAgent;
+						var msie = ua.indexOf("MSIE ");
+
+						if (msie > 0) {
+//							$('.mapContainer').height($('body').height() - $('.head').height() - $('.messageContainer').height());
+							var headHeight = $('.head').height();
+							var messageHeight = $('.messageContainer').height();
+
+							var leftoverHeight = $('body').height() - headHeight - messageHeight;
+							leftoverHeight -= mTop;
+							$('.mapInner').height( leftoverHeight );
+						}
 						
 						$('.mapInner').animate({
 							marginLeft: mLeft+'px',
@@ -121,76 +144,93 @@
 			} else {
 				//Desktop-Tablet View
 				var onPoi = 0;
-				
-				$(function() {
-					screenResize();
-					
-					$.getJSON('db/poi.json', function(data) {
-			            $.each(data.pois, function(key, val) {
-			                var poiData = $.makeArray(val)[0];
-			                if(poiData.typeId == 2) {
-				                
-				                var dataStyles = '';
-				                if(poiData.ix > 0.5) {
-					                 dataStyles = 'style="margin-left: -300px;"';
-				                }
-				                
-			                	$('.mapInner').prepend('<div id="'+poiData.id+'" class="poiMarkerContainer" style="top: '+(poiData.iy*100)+'%; left: '+(poiData.ix*100)+'%;"><div class="poiMarker">'+poiData.id+'</div><div class="poiData"'+dataStyles+'>'+poiData.text+'</div></div>');
-			                }
-			            });
-			            
-			            $('.mapImg').click(function() {
-				            $('.poiData').fadeOut();
-				            onPoi = 0;
-			            });
 
-						$('.poiMarkerContainer').hover(function() {
-//							debugger;
-							var marker = $(this).find('.poiMarker')[0];
-							$(marker).stop();
-							$(marker).animate({height: '66px', width: '66px', margin: '0 0 0 -33px', padding: '15px 0 0 0'}, 200);
-						}, function() {
-//							debugger;
-							var marker = $(this).find('.poiMarker')[0];
-							$(marker).stop();
-							$(marker).animate({height: '60px', width: '60px', margin: '0 0 0 -30px', padding: '12px 0 0 0'}, 200);
+				$(function () {
+					screenResize();
+
+					$.getJSON('db/poi.json', function (data) {
+						$.each(data.pois, function (key, val) {
+							var poiData = $.makeArray(val)[0];
+							if (poiData.typeId == 2) {
+
+								var dataStyles = '';
+								if (poiData.ix > 0.5) {
+									dataStyles = 'style="margin-left: -300px;"';
+								}
+
+								$('.mapInner').prepend('<div id="' + poiData.id + '" class="poiMarkerContainer" style="top: ' + (poiData.iy * 100) + '%; left: ' + (poiData.ix * 100) + '%;"><div class="poiMarker">' + poiData.id + '</div><div class="poiData"' + dataStyles + '>' + poiData.text + '</div></div>');
+							}
 						});
 
-						$('.poiMarkerContainer').click(function() {
-				            poiId = $(this).attr('id');
-				            if(poiId == onPoi) {
-					            setTimeout(function() { $('#'+oldPoi).find('.poiMarker').removeClass('z3'); }, 1000);
-					            $('.poiData').fadeOut();
-					            onPoi = 0;
-				            } else {
-						        var oldPoi = onPoi;
-						        setTimeout(function() { $('#'+oldPoi).find('.poiMarker').removeClass('z3'); }, 1000);
-						        $('.poiData').fadeOut();
-					            $(this).find('.poiMarker').addClass('z3');
-					            $(this).find('.poiData').fadeIn();
-					            onPoi = poiId;
-				            }
-			            });
+						$('.mapImg').click(function () {
+							$('.poiData').fadeOut();
+							onPoi = 0;
+						});
+
+						$('.poiMarkerContainer').hover(function () {
+//							debugger;
+							var marker = $(this).find('.poiMarker')[0];
+							$(marker).stop();
+							$(marker).animate({
+								height: '66px',
+								width: '66px',
+								margin: '0 0 0 -33px',
+								padding: '15px 0 0 0'
+							}, 200);
+						}, function () {
+//							debugger;
+							var marker = $(this).find('.poiMarker')[0];
+							$(marker).stop();
+							$(marker).animate({
+								height: '60px',
+								width: '60px',
+								margin: '0 0 0 -30px',
+								padding: '12px 0 0 0'
+							}, 200);
+						});
+
+						$('.poiMarkerContainer').click(function () {
+							poiId = $(this).attr('id');
+							if (poiId == onPoi) {
+								setTimeout(function () {
+									$('#' + oldPoi).find('.poiMarker').removeClass('z3');
+								}, 1000);
+								$('.poiData').fadeOut();
+								onPoi = 0;
+							} else {
+								var oldPoi = onPoi;
+								setTimeout(function () {
+									$('#' + oldPoi).find('.poiMarker').removeClass('z3');
+								}, 1000);
+								$('.poiData').fadeOut();
+								$(this).find('.poiMarker').addClass('z3');
+								$(this).find('.poiData').fadeIn();
+								onPoi = poiId;
+							}
+						});
 					});
-					
-					$(window).resize(function() {
+
+					$(window).resize(function () {
 						screenResize();
-						if($('body').width() < 736) { window.location = window.location; }
+						if ($('body').width() < 736) {
+							window.location = window.location;
+						}
 					});
 				});
+			}
 				
-				function screenResize(poi) {
+			function screenResize(poi) {
+
+//					$('.mapContainer').height('inherit');
 
 
 
-					$('.mapContainer').height($('body').height() - $('.head').height() - $('.messageContainer').height());
+				if($('body').width() < 736 && poi != null) {
+//					$('.mapContainer').height(($('body').height() - $('.head').height() - $('.messageContainer').height())*poi.scale);
 					$('.mapInner').height($('.mapInner').width()*0.75);
-
-					if($('body').width() < 736 && poi != null) {
-						var scaleWidth = $('.mapContainer').width()*poi.scale;
-						$('.mapInner').width(scaleWidth+'px');
-						$('.mapInner').css('left', scaleWidth*poi.x*(-1)+'px');
-					}
+					var scaleWidth = $('.mapContainer').width()*poi.scale;
+					$('.mapInner').width(scaleWidth+'px');
+					$('.mapInner').css('left', scaleWidth*poi.x*(-1)+'px');
 				}
 			}
 		</script>
