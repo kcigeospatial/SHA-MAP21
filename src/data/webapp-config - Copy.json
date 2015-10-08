@@ -111,17 +111,17 @@
         "header": {
           "linkText": "",
           "linkURL": "http://storymaps.arcgis.com",
-          "logoURL": "resources/images/header-icon.gif",
+          "logoURL": "NO_LOGO",
           "logoTarget": "",
           "social": {
             "facebook": false,
             "twitter": false,
             "bitly": false
           },
-          "compactSize": false
+          "compactSize": true
         }
       },
-      "title": "Performance Based Management Portal",
+      "title": "Meeting or Exceeding Federal Requirements",
       "story": {
         "storage": "WEBAPP",
         "entries": [
@@ -135,13 +135,28 @@
                 "url": "http://localhost:8081/map21_progress/index.html",
                 "type": "webpage",
                 "display": "stretch",
-                "unload": false
+                "unload": true
               }
             },
             "description": ""
           },
           {
             "title": "Performance",
+            "creaDate": 1436559826703,
+            "status": "PUBLISHED",
+            "media": {
+              "type": "webpage",
+              "webpage": {
+                "url": "http://localhost:8080/src/index.html",
+                "type": "webpage",
+                "display": "stretch",
+                "unload": true
+              }
+            },
+            "description": ""
+          },
+          {
+            "title": "Performance - No Map",
             "creaDate": 1436559826703,
             "status": "PUBLISHED",
             "media": {
