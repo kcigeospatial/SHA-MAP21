@@ -111,11 +111,11 @@
         "header": {
           "linkText": "",
           "linkURL": "http://storymaps.arcgis.com",
-          "logoURL": "resources/images/header-icon.gif",
+          "logoURL": "resources/images/header-icon2.png",
           "logoTarget": "",
           "social": {
-            "facebook": false,
-            "twitter": false,
+            "facebook": true,
+            "twitter": true,
             "bitly": false
           },
           "compactSize": false

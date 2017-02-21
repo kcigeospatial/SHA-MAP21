@@ -896,7 +896,7 @@ define(["lib-build/css!./MainView",
 
 				if(view.indexOf('tab') > -1){
 					var index = view.substring(3);
-					navigateStoryToIndex(parseInt(index))
+					navigateStoryToIndex(parseInt(index, 10));
 				}
 				//app.ui.mobileView.setView(view);
 			};

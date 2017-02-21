@@ -21,7 +21,7 @@
 	/* TODO */
 	background: #444;
 	color: #fff;
-	
+
 	margin: 0;
 	overflow: hidden;
 }
@@ -121,6 +121,62 @@
 	height: 60px;
 }
 
+/*Tara - add: */
+#headerDesktop .newlinksContainer  {
+	position: relative;
+	display: inline-block;
+
+	width: 40px;
+	height: 32px;
+
+	float: left;
+	margin-right:5px;
+	margin-top:5px;
+
+	/*
+		border: solid;
+		border-width: medium;
+	*/
+
+}
+
+#headerDesktop .feedbackloopContainer  {
+	position: relative;
+	display: inline-block;
+
+	width: 35px;
+	height: 32px;
+
+	float: left;
+	margin-right:5px;
+	margin-top:5px;
+
+/*
+	border: solid;
+	border-width: medium;
+*/
+}
+
+
+#headerDesktop .newlinksContainer .shareBtns2  {
+	position: absolute;
+	top: 100%;
+	display: none;
+	margin: 0;
+
+	list-style: none;
+	width: 100%;
+	padding: 0;
+}
+
+#headerDesktop .newlinksContainer:hover .shareBtns2  {
+	display: block;
+}
+
+
+
+ /*Tara end add */
+
 #headerDesktop .linkContainer a {
 	/*color: #C5D5D5;*/
 	font-weight: normal;
@@ -143,6 +199,8 @@
 
 #headerDesktop .shareBtns {
 	margin-left: 8px;
+	/*width: 250px;
+	float: right;*/
 }
 
 #headerDesktop .shareIcon {
@@ -165,7 +223,7 @@
 }
 
 #headerDesktop .logoWrapper {
-	height: 50px; 
+	height: 50px;
 	vertical-align: middle;
 }
 
@@ -197,7 +255,7 @@
 }
 
 /* Reduce the width of the field to be sure that icon will stay visible */
-#headerDesktop .text_edit_label { 
+#headerDesktop .text_edit_label {
 	max-width: 94%;
 	overflow: hidden;
 }
